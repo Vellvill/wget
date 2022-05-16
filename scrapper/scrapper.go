@@ -5,6 +5,7 @@ import (
 	"net/http"
 )
 
+//Scrapper ...
 type Scrapper struct {
 	Helper   helper
 	doc      *html.Node
@@ -14,6 +15,7 @@ type Scrapper struct {
 	HrefsURL []string
 }
 
+//NewScrapper ...
 func NewScrapper(doc *html.Node, url string, resp *http.Response) *Scrapper {
 	return &Scrapper{
 		Helper: newHelper(),
@@ -23,6 +25,7 @@ func NewScrapper(doc *html.Node, url string, resp *http.Response) *Scrapper {
 	}
 }
 
+//Scrap ...
 func (s *Scrapper) Scrap() {
 	var f func(node *html.Node)
 	f = func(n *html.Node) {

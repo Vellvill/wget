@@ -2,10 +2,12 @@ package scrapper
 
 import "strings"
 
+//helper ...
 type helper struct {
 	noturl map[string]struct{}
 }
 
+//newHelper ...
 func newHelper() helper {
 	return helper{
 		noturl: map[string]struct{}{
@@ -19,6 +21,7 @@ func newHelper() helper {
 		}}
 }
 
+//isFalseUrl ...
 func (h *helper) isFalseUrl(link string) bool {
 	format := link[:strings.IndexByte(link, ':')]
 	if _, ok := h.noturl[format]; ok {
@@ -27,6 +30,7 @@ func (h *helper) isFalseUrl(link string) bool {
 	return true
 }
 
+//sanitizeUrl ...
 func (h *helper) sanitizeUrl(link string) string {
 	if h.isFalseUrl(link) {
 		link = strings.TrimSpace(link)

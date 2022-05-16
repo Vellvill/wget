@@ -62,5 +62,5 @@ func main() {
 	}
 
 	down := downloader.NewDownloader()
-	down.DownloadImages(s.Links)
+	down.Download(s.Links)
 }

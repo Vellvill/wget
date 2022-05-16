@@ -8,14 +8,17 @@ import (
 	"os"
 )
 
+//Downloader ...
 type Downloader struct {
 }
 
+//NewDownloader ...
 func NewDownloader() *Downloader {
 	return &Downloader{}
 }
 
-func (d *Downloader) DownloadImages(urls []string) {
+//Download ...
+func (d *Downloader) Download(urls []string) {
 	if len(urls) == 0 {
 		return
 	}

@@ -1,5 +1,6 @@
 package downloader
 
+//trimFileName ...
 func trimFileName(url string) string {
 	r := []rune(url)
 	var index int
